@@ -1,76 +1,79 @@
-import Image from "next/image";
+import Link from "next/link";
 
-// 1 · The starting point	/	What am I working toward?
-// 2 · The plan	/plan	What should I do next?
-// 3 · The opportunities	/opportunities	Where could I apply?
-// 4 · A closer look	/opportunities/[id]	What does this opportunity involve?
-// 5 · The dashboard	/dashboard	How is my journey going?
-// 6 · The applications	/dashboard/applications	Where have I already applied?
+const steps = [
+  {
+    title: "Remember the goal",
+    text: "One clear target keeps the noise away.",
+  },
+  {
+    title: "Take the next step",
+    text: "Small weekly actions instead of a giant to-do list.",
+  },
+  {
+    title: "Review and adjust",
+    text: "Track every application and learn from each one.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-stone-50 text-stone-800">
+      <section className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
+        {/* Intro */}
+        <p className="text-sm font-semibold uppercase tracking-widest text-emerald-700">
+          Yehia&apos;s career path
+        </p>
+        <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-tight sm:text-6xl">
+          Hi, I&apos;m Yehia. I just graduated, and I&apos;m building my way
+          forward.
+        </h1>
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone-600">
+          I studied Computer Science at the Lebanese University, First Branch.
+          Graduation felt great. The job search afterwards felt like a hundred
+          open tabs and no direction. This is the place where I slow down,
+          plan, and move one step at a time.
+        </p>
+
+        {/* Goal card */}
+        <div className="mt-12 rounded-2xl border border-emerald-200 bg-emerald-50 p-8 shadow-sm">
+          <p className="text-sm font-semibold text-emerald-700">My goal</p>
+          <p className="mt-2 text-2xl font-semibold sm:text-3xl">
+            Find my first tech job within two months.
+          </p>
+          <p className="mt-3 text-stone-600">
+            No promises, just a clear plan and steady progress.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        {/* Links */}
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <Link
+            href="/plan"
+            className="rounded-xl bg-emerald-700 px-6 py-3 text-center font-semibold text-white transition hover:bg-emerald-800"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            See my plan
+          </Link>
+          <Link
+            href="/opportunities"
+            className="rounded-xl border border-stone-300 bg-white px-6 py-3 text-center font-semibold transition hover:border-emerald-700 hover:text-emerald-700"
           >
-            Documentation
-          </a>
+            Explore opportunities
+          </Link>
         </div>
-      </main>
-    </div>
+
+        {/* Path steps */}
+        <ol className="mt-20 grid gap-6 sm:grid-cols-3">
+          {steps.map((step, i) => (
+            <li key={step.title} className="rounded-xl bg-white p-6 shadow-sm">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-700 font-bold text-white">
+                {i + 1}
+              </span>
+              <h2 className="mt-4 text-lg font-semibold">{step.title}</h2>
+              <p className="mt-2 text-stone-600">{step.text}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </main>
   );
 }

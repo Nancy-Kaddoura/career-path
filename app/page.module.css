@@ -1,0 +1,402 @@
+
+.home {
+  --green: #245b4c;
+  --green-light: #e7f0eb;
+  --ink: #20362f;
+  --muted: #687770;
+  --border: #e0e7e2;
+
+  color: var(--ink);
+  padding: 36px 24px 24px;
+}
+
+.hero,
+.featuresSection,
+.bottomCta,
+.disclaimer {
+  width: 100%;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 56px;
+  padding-top: 35px;
+  padding-bottom: 80px;
+  
+}
+
+.heroContent {
+  max-width: 570px;
+}
+
+.eyebrow,
+.miniLabel {
+  color: var(--green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.hero h1 {
+  margin: 18px 0;
+  font-size: clamp(2.6rem, 4.5vw, 4.3rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.hero h1 span {
+  color: var(--green);
+}
+
+.intro {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  max-width: 540px;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 19px;
+  border: 1px solid var(--green);
+  border-radius: 9px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.primaryButton {
+  background: var(--green);
+  color: white;
+}
+
+.primaryButton:hover {
+  background: #194738;
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  color: var(--green);
+  background: transparent;
+}
+
+.secondaryButton:hover {
+  background: var(--green-light);
+}
+
+.note {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Roadmap preview card */
+
+.roadmapCard {
+  padding: 27px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: linear-gradient(145deg, #ffffff, #f2f7f3);
+  box-shadow: 0 18px 55px rgba(32, 54, 47, 0.07);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.cardHeader p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #5d987b;
+}
+
+.roadmapIntro {
+  padding: 26px 0 18px;
+}
+
+.roadmapIntro h2 {
+  margin: 8px 0;
+  font-size: 1.7rem;
+  line-height: 1.25;
+}
+
+.roadmapIntro > p:last-child {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.miniLabel {
+  margin: 0;
+  font-size: 0.68rem;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px 0;
+  border-top: 1px solid var(--border);
+}
+
+.stepNumber,
+.featureNumber {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--green-light);
+  color: var(--green);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.stepText {
+  flex: 1;
+}
+
+.stepText h3 {
+  margin: 0 0 4px;
+  font-size: 0.98rem;
+}
+
+.stepText p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.arrow {
+  color: var(--green);
+  font-size: 1.1rem;
+}
+
+.cardFooterLink {
+  display: block;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--green);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+/* Three feature cards */
+
+.featuresSection {
+  padding-top: 35px;
+  padding-bottom: 75px;
+}
+
+.sectionHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 27px;
+}
+
+.sectionHeading h2 {
+  margin: 10px 0 0;
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  letter-spacing: -0.035em;
+}
+
+.sectionHeading > p {
+  max-width: 390px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 235px;
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: inherit;
+  background: white;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  border-color: #a4c2b1;
+  box-shadow: 0 12px 30px rgba(32, 54, 47, 0.06);
+}
+
+.featureNumber {
+  width: 38px;
+  height: 38px;
+}
+
+.featureCard h3 {
+  margin: 22px 0 9px;
+  font-size: 1.12rem;
+}
+
+.featureCard > p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.featureLink {
+  margin-top: auto;
+  color: var(--green);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+/* Closing section */
+
+.bottomCta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 32px;
+  border-radius: 20px;
+  background: var(--green-light);
+}
+
+.bottomCta h2 {
+  max-width: 570px;
+  margin: 10px 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.2;
+}
+
+.bottomCta > div > p:last-child {
+  max-width: 540px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.disclaimer {
+  padding-top: 22px;
+  padding-bottom: 10px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 850px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-top: 20px;
+    padding-bottom: 55px;
+  }
+
+  .heroContent {
+    max-width: 680px;
+  }
+
+  .roadmapCard {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featureCard {
+    min-height: auto;
+  }
+
+  .sectionHeading {
+    display: block;
+  }
+
+  .sectionHeading > p {
+    max-width: 600px;
+  }
+
+  .bottomCta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    padding: 22px 16px;
+  }
+
+  .hero h1 {
+    font-size: 2.55rem;
+  }
+
+  .heroActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .heroActions a {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .roadmapCard {
+    padding: 20px;
+  }
+
+  .bottomCta {
+    padding: 23px;
+  }
+}
