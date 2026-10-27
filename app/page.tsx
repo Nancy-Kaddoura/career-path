@@ -1,5 +1,12 @@
 import Image from "next/image";
 
+// 1 · The starting point	/	What am I working toward?
+// 2 · The plan	/plan	What should I do next?
+// 3 · The opportunities	/opportunities	Where could I apply?
+// 4 · A closer look	/opportunities/[id]	What does this opportunity involve?
+// 5 · The dashboard	/dashboard	How is my journey going?
+// 6 · The applications	/dashboard/applications	Where have I already applied?
+
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
